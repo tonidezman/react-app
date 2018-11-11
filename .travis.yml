@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t temp_container -f Dockerfile.dev
+  - docker build -t temp_container -f Dockerfile.dev .
 
 script:
-  - docker run temp_container npm run test -- --coverage # default npm run test hangs and coverage exits with 0 if test pass
+  - docker run temp_container npm run test -- --coverage
